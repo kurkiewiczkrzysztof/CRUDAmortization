@@ -1,0 +1,182 @@
+﻿<Window x:Class="przeportowanieaplikacjiwpf.oknoGlowne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:przeportowanieaplikacjiwpf"
+        mc:Ignorable="d"
+        Title="oknoGlowne" Height="600" Width="1000" Loaded="oknoGlowne_Loaded">
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="569" VerticalAlignment="Top" Width="992" Margin="-6,4,0,-4">
+            <TabItem Header="Urządzenia" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5" Margin="0,10,0,-10">
+                    <DataGrid x:Name="dataGridUrzadzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="380" Width="986" ItemsSource="{Binding}" Background="{x:Null}" ColumnWidth="*" />
+                    <Button x:Name="buttonDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="10,412,0,0" VerticalAlignment="Top" Width="74" Height="24" Click="buttonDodaj_Click"/>
+                    <TextBox x:Name="textBoxUrzadzenie1" HorizontalAlignment="Left" Height="24" Margin="140,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.203"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="172,391,0,0" TextWrapping="Wrap" Text="Nazwa" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxUrzadzenie2" HorizontalAlignment="Left" Height="24" Margin="260,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+                    <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="294,391,0,0" TextWrapping="Wrap" Text="Opis" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxUrzadzenie3" HorizontalAlignment="Left" Height="24" Margin="380,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+                    <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="420,391,0,0" TextWrapping="Wrap" Text="Kod" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxUrzadzenie4" HorizontalAlignment="Left" Height="24" Margin="500,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="519,391,0,0" TextWrapping="Wrap" Text="Amortyzacja" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxUrzadzenie5" HorizontalAlignment="Left" Height="22" Margin="619,494,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Visibility="Hidden"/>
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="679,388,0,0" TextWrapping="Wrap" Text="Imię i Nazwisko" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.449"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="textBoxUrzadzenie6" HorizontalAlignment="Left" Height="23" Margin="744,493,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Visibility="Hidden"/>
+                    <TextBox x:Name="textBoxUrzadzenie7" HorizontalAlignment="Left" Height="23" Margin="843,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="textBoxUrzadzenie8" HorizontalAlignment="Left" Height="23" Margin="915,413,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="840,391,0,0" TextWrapping="Wrap" Text="Nr. piętra" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="908,391,0,0" TextWrapping="Wrap" Text="Nr. pokoju" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.661"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="0.322"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <Button x:Name="buttonUsun" Content="Usuń" HorizontalAlignment="Left" Margin="9,480,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="buttonUsun_Click"/>
+                    <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="185,459,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="32"/>
+                    <TextBox x:Name="textBoxUrzadzenie9" HorizontalAlignment="Left" Height="23" Margin="140,480,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+                    <ComboBox x:Name="comboBoxUrzadzeniaImieNazwisko" HorizontalAlignment="Left" Margin="640,413,0,0" VerticalAlignment="Top" Width="160" SelectionChanged="comboBoxUrzadzeniaImieNazwisko_SelectionChanged" IsSynchronizedWithCurrentItem="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Zdjęcia" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5" Margin="0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="339*"/>
+                        <ColumnDefinition Width="154*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGridZdjecia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="541" Width="656" ColumnWidth="*"/>
+                    <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="2,153,0,0" TextWrapping="Wrap" Text="Pokaż Zdjęcie" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+                    <ComboBox x:Name="comboZdjecia2" HorizontalAlignment="Left" Margin="172,174,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Margin="2,174,0,0" TextWrapping="Wrap" Text="Wybierz ID urzadzenia:" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button x:Name="buttonZdjeciaPokaz" Content="Pokaż" HorizontalAlignment="Left" Margin="214,201,0,0" VerticalAlignment="Top" Width="75" Click="buttonZdjeciaPokaz_Click" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock7_Copy" HorizontalAlignment="Left" Margin="2,30,0,0" TextWrapping="Wrap" Text="Dodaj zdjecie" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock8_Copy" HorizontalAlignment="Left" Margin="2,51,0,0" TextWrapping="Wrap" Text="Wybierz ID urzadzenia:" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="comboZdjecia1" HorizontalAlignment="Left" Margin="172,45,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button x:Name="buttonZdjeciaDodaj" Content="Zapisz" HorizontalAlignment="Left" Margin="217,72,0,0" VerticalAlignment="Top" Width="75" Click="buttonZdjeciaDodaj_Click" RenderTransformOrigin="-0.333,0.35" Grid.Column="1"/>
+                    <Button x:Name="buttonZdjecieWybierz" Content="Wybierz Zdjecie" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Width="102" Click="buttonZdjecieWybierz_Click" Grid.Column="1"/>
+                    <TextBox x:Name="textSciezka" HorizontalAlignment="Left" Height="23" Margin="0,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" IsEnabled="False" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock7_Copy1" HorizontalAlignment="Left" Margin="2,274,0,0" TextWrapping="Wrap" Text="Usuń Zdjęcie" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlock8_Copy1" HorizontalAlignment="Left" Margin="2,295,0,0" TextWrapping="Wrap" Text="Wybierz ID urzadzenia:" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="comboZdjecia3" HorizontalAlignment="Left" Margin="172,295,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button x:Name="buttonZdjeciaUsun" Content="Usuń" HorizontalAlignment="Left" Margin="214,322,0,0" VerticalAlignment="Top" Width="75" Click="buttonZdjeciaUsun_Click" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pracownicy" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridPracownicy" HorizontalAlignment="Left" VerticalAlignment="Top" Height="541" Width="656" ColumnWidth="*"/>
+                    <TextBlock x:Name="textBlock7_Copy4" HorizontalAlignment="Left" Margin="678,30,0,0" TextWrapping="Wrap" Text="Dodaj Pracownika" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy4" HorizontalAlignment="Left" Margin="678,51,0,0" TextWrapping="Wrap" Text="Wpisz Imię:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textPracownik1" HorizontalAlignment="Left" Height="23" Margin="850,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="textBlock8_Copy5" HorizontalAlignment="Left" Margin="678,78,0,0" TextWrapping="Wrap" Text="Wpisz Nazwisko:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textPracownik2" HorizontalAlignment="Left" Height="23" Margin="850,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left" Margin="895,99,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+                    <TextBlock x:Name="textBlock7_Copy2" HorizontalAlignment="Left" Margin="678,153,0,0" TextWrapping="Wrap" Text="Usuń Pracownika, Który nie ma przypisanego urządzenia" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy2" HorizontalAlignment="Left" Margin="678,214,0,0" TextWrapping="Wrap" Text="Wpisz ID:" VerticalAlignment="Top" RenderTransformOrigin="0.531,3.719"/>
+                    <Button x:Name="button2" Content="Usuń" HorizontalAlignment="Left" Margin="895,242,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+                    <TextBox x:Name="textUsunPrac" HorizontalAlignment="Left" Height="23" Margin="850,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lokalizacje" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridLokalizacje" HorizontalAlignment="Left" VerticalAlignment="Top" Height="541" Width="656" ColumnWidth="*"/>
+                    <TextBlock x:Name="textBlock7_Copy5" HorizontalAlignment="Left" Margin="678,30,0,0" TextWrapping="Wrap" Text="Dodaj Lokalizacja" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy6" HorizontalAlignment="Left" Margin="678,51,0,0" TextWrapping="Wrap" Text="Wpisz nr. piętra:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textLokalizacje1" HorizontalAlignment="Left" Height="23" Margin="850,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="textBlock8_Copy7" HorizontalAlignment="Left" Margin="678,78,0,0" TextWrapping="Wrap" Text="Wpisz nr. pokoju:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textLokalizacje2" HorizontalAlignment="Left" Height="23" Margin="850,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="buttonDodajLokal" Content="Dodaj" HorizontalAlignment="Left" Margin="895,99,0,0" VerticalAlignment="Top" Width="75" Click="button_ClickLokal"/>
+                    <TextBlock x:Name="textBlock7_Copy3" HorizontalAlignment="Left" Margin="678,153,0,0" TextWrapping="Wrap" Text="Usuń Lokalizacje, która nie ma przypisanego urządzenia" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy3" HorizontalAlignment="Left" Margin="678,202,0,0" TextWrapping="Wrap" Text="Wpisz ID:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textLokalizacje3" HorizontalAlignment="Left" Height="23" Margin="850,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="buttonUsunLokal" Content="Usuń" HorizontalAlignment="Left" Margin="895,225,0,0" VerticalAlignment="Top" Width="75" Click="button2_ClickLokal"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Inwentaryzacja" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-14,0">
+                    <DataGrid x:Name="dataGridInwentaryzacja" HorizontalAlignment="Left" VerticalAlignment="Top" Height="333" Width="990" ColumnWidth="*"/>
+                    <DataGrid x:Name="dataGridInwentaryzacja2" HorizontalAlignment="Left" Margin="0,421,0,0" VerticalAlignment="Top" Height="120" Width="1000" ColumnWidth="200"/>
+                    <ComboBox x:Name="comboInwentaryzacja" HorizontalAlignment="Left" Margin="441,359,0,0" VerticalAlignment="Top" Width="118"/>
+                    <Button x:Name="buttonInwentaryzacjaPokaz" Content="Pokaż" HorizontalAlignment="Left" Margin="193,387,0,0" VerticalAlignment="Top" Width="76" Height="27" Click="buttonInwentaryzacjaPokaz_Click"/>
+                    <Button x:Name="buttonInwentaryzacjaDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="746,387,0,0" VerticalAlignment="Top" Width="76" Height="27" Click="buttonInwentaryzacjaDodaj_Click"/>
+                    <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="441,338,0,0" TextWrapping="Wrap" Text="Wybierz ID urzadzenia" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" Margin="184,346,0,0" TextWrapping="Wrap" Text="Pokaż jego daty inwentaryzacji" VerticalAlignment="Top" Height="36" Width="97" TextAlignment="Center"/>
+                    <TextBlock x:Name="textBlock11" HorizontalAlignment="Left" Margin="708,346,0,0" TextWrapping="Wrap" Text="Dodaj je do inwentaryzacji z aktualną datą" VerticalAlignment="Top" Height="41" Width="150" TextAlignment="Center"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Historia" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridHistoria1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="248" Width="986" MouseLeftButtonUp="PobierzIdHistoria" ColumnWidth="*" />
+                    <RadioButton x:Name="radioButtonHistoriaPracownikow" Content="Historia Pracowników" HorizontalAlignment="Left" Margin="315,267,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="radioButtonHistoriaLokalizacji" Content="Historia Lokalizacji" HorizontalAlignment="Left" Margin="575,267,0,0" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGridHistoria2" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" Height="232" Width="986" ColumnWidth="200"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Aktualnie przypisane" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="140">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-204,0">
+                    <DataGrid x:Name="dataGridAktualne" HorizontalAlignment="Left" VerticalAlignment="Top" Height="541" Width="656" ColumnWidth="*"/>
+                    <TextBlock x:Name="textBlock7_Copy6" HorizontalAlignment="Left" Margin="678,127,0,0" TextWrapping="Wrap" Text="Aktulizuj pracownika" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy8" HorizontalAlignment="Left" Margin="678,148,0,0" TextWrapping="Wrap" Text="Imię:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textAktualneImie" HorizontalAlignment="Left" Height="23" Margin="850,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="textBlock8_Copy9" HorizontalAlignment="Left" Margin="678,175,0,0" TextWrapping="Wrap" Text="Nazwisko:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textAktualneNazwisko" HorizontalAlignment="Left" Height="23" Margin="850,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="buttonDodajLokal_Copy" Content="Aktualizuj" HorizontalAlignment="Left" Margin="895,196,0,0" VerticalAlignment="Top" Width="75" Click="buttonAktualnePracDodaj"/>
+                    <TextBlock x:Name="textBlock7_Copy7" HorizontalAlignment="Left" Margin="678,250,0,0" TextWrapping="Wrap" Text="Aktualizuj lokalizacje" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock8_Copy10" HorizontalAlignment="Left" Margin="678,271,0,0" TextWrapping="Wrap" Text="Numer piętra:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textAktualnePietro" HorizontalAlignment="Left" Height="23" Margin="850,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="buttonUsunLokal_Copy" Content="Aktualizuj" HorizontalAlignment="Left" Margin="895,320,0,0" VerticalAlignment="Top" Width="75" Click="buttonAktLokalizacjeDodaj"/>
+                    <TextBox x:Name="textAktualnyPokoj" HorizontalAlignment="Left" Height="23" Margin="850,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="textBlock8_Copy11" HorizontalAlignment="Left" Margin="678,299,0,0" TextWrapping="Wrap" Text="Numer pokoju:" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="radioAktualnePrac" Content="Pokaż aktualnych pracowników" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Checked="AktPrac"/>
+                    <RadioButton x:Name="radioAktualneLokal" Content="Pokaż aktualne lokalizacje" HorizontalAlignment="Left" Margin="678,30,0,0" VerticalAlignment="Top" Checked="AktLokal"/>
+                    <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" Margin="678,50,0,0" TextWrapping="Wrap" Text="Wybierz ID urzadzenia" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="comboAktualneID" HorizontalAlignment="Left" Margin="850,44,0,0" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Amortyzacje" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridAmortyzacja" HorizontalAlignment="Left" VerticalAlignment="Top" Height="447" Width="986" ColumnWidth="*" LoadingRow="formatuj"/>
+                    <Button x:Name="buttonAmortyzacja" Content="Ręczne wywołanie amortyzacji" HorizontalAlignment="Left" Margin="403,459,0,0" VerticalAlignment="Top" Width="197" Height="69" Click="amorRecz"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wyszukiwanie" HorizontalAlignment="Left" Height="20" Margin="0" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridWyszukaj" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" Height="481" Width="986" ColumnWidth="200"/>
+                    <ComboBox x:Name="comboBoxWyszukaj" HorizontalAlignment="Left" Margin="166,18,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Content="Pracownik; Nazwisko" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Pracownik; Imie" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Urzadzenie; Nazwa/Opis" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Urzadzenie; Kod" HorizontalAlignment="Left" Width="118"/>
+                    </ComboBox>
+                    <TextBox x:Name="textBoxWyszukaj" HorizontalAlignment="Left" Height="23" Margin="323,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="textBoxWyszukaj_KeyUp"/>
+                    <Label x:Name="labelWszykiwanie" Content="Wyszukaj:" HorizontalAlignment="Left" Margin="84,14,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+
+    </Grid>
+</Window>
